@@ -35,12 +35,13 @@ class D6F_PH:
     def _temp_celsius(output_decimal):
         return (output_decimal - 10214) * 100 / 3739 # // convert to degree-C
 
-    def __init__(self, i2c_obj, address=_I2C_ADDRESS, pressure_range='5050', en_crc=False):
+    def __init__(self, i2c_obj, address=_I2C_ADDRESS, pressure_range='5050', en_crc=False, offset=0):
         """
         :param i2c_obj: I2C class; I2C bus
         :param address: int; Sensor I2C address, pls refer to the datasheet
         :param pressure_range: int or str; Sensor pressure range, pls refer to the datasheet
         :param en_crc: True/False; enable/disable crc8 for data validation
+        :param offset: int; pressure offset in raw decimal
         """
         self._i2c = i2c_obj
         self._addr = address
@@ -49,6 +50,7 @@ class D6F_PH:
         else:
             self._pres_range = pressure_range
         self._pres_func = self._get_pres_func(self._pres_range)
+        self._offset = offset
 
         self._i2c.writeto(address, b'\x0b\x00') # /* EEPROM Control <= 00h */
         if en_crc:
@@ -104,7 +106,7 @@ class D6F_PH:
         if self.en_crc and ((crc := self.crc8(self._buffer[:2])) != self._buffer[2]):
             print(self._buffer, hex(crc))
             return None
-        raw_pres = int.from_bytes(self._buffer[:2], 'big') # Covert from 2-byte BE unsigned int.
+        raw_pres = int.from_bytes(self._buffer[:2], 'big') - self._offset # Covert from 2-byte BE unsigned int.
 
         self._i2c.writeto(self._addr, b'\x00\xd0\x61\x2c') # /* [D061/D062] => Read TMP_H/TMP_L values */
         self._i2c.readfrom_mem_into(self._addr, 0x07, self._buffer)
