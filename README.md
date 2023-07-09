@@ -41,5 +41,5 @@ https://github.com/ekspla/D6F-PH
 MIT license.
 
 ## Reference
-- MEMS Differential pressure Sensor User's Manual (en-D6F-PH_users_manual.pdf, available from OMRON)
+- MEMS Differential pressure Sensor User's Manual; [en-D6F-PH_users_manual.pdf, available from OMRON](https://omronfs.omron.com/en_US/ecb/products/pdf/en-D6F-PH_users_manual.pdf)
 - GitHub OMRON(https://github.com/omron-devhub)
