@@ -5,7 +5,7 @@ This code was tested with Micropython 1.19.1 - 1.20.0 on STM32F4.
 https://github.com/ekspla/D6F-PH
 
 ## How to use
-**pressure_range** argument ('0505', '0025', '5050') is necessary for pressure transfer functions (defaults to D6F-PH5050).
+**pressure_range** argument ('0505', '0025', '5050') is necessary for the pressure transfer function (defaults to D6F-PH5050).
 
  w/o crc check
 ```Python
