@@ -37,6 +37,9 @@ https://github.com/ekspla/D6F-PH
 >>>
 ```
 
+## Note
+Because this sensor utilizes a heater and a pair of thermopile, **it should be placed horizontally**.  Otherwise, you observe unacceptable offset in measured pressures. 
+
 ## License
 MIT license.
 
