@@ -5,7 +5,7 @@ This code was tested with Micropython 1.19.1 - 1.20.0 on STM32F4.
 https://github.com/ekspla/D6F-PH
 
 ## How to use
-**pressure_range** argument ('0505', '0025', '5050') is necessary for the pressure transfer function (defaults to D6F-PH5050), e.g. pressure_range='0505'
+**pressure_range** argument ('0505', '0025', '5050') is necessary for the pressure transfer function (defaults to D6F-PH5050), e.g. ```pressure_range='0505'```
 
  w/o crc check
 ```Python
@@ -39,6 +39,7 @@ https://github.com/ekspla/D6F-PH
 
 ## Note
 Because this sensor utilizes a heater and a pair of thermopile, **it should be placed horizontally**.  Otherwise, you may observe unacceptable offset in measured pressures. 
+ An offset (as a raw value; n) can be subtracted by using ```offset=n``` argument.  
 
 ## License
 MIT license.
