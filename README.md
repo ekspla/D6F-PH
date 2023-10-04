@@ -41,6 +41,9 @@ https://github.com/ekspla/D6F-PH
 Because this sensor utilizes a heater and a pair of thermopile, **it should be placed horizontally**.  Otherwise, you may observe unacceptable offset in measured pressures. 
  An offset (as a raw value; n) can be subtracted by using ```offset=n``` argument.  
 
+## Application Example
+This differential pressure sensor can be used as an air speed sensor by using a Pitot tube.  An [example](https://github.com/ekspla/Pitot_GPS_Sensor_Logger/) is shown. 
+
 ## License
 MIT license.
 
