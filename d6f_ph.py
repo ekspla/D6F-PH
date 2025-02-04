@@ -2,7 +2,7 @@
 #
 # (c) 2023 ekspla.
 # MIT license.  https://github.com/ekspla/D6F-PH
-"""A micropython module for differential pressure sensor, D6F-PH (OMRON).
+"""A MicroPython module for differential pressure sensor, D6F-PH (OMRON).
 """
 
 from time import sleep_ms
