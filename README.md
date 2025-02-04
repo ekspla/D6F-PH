@@ -1,7 +1,7 @@
-# A micropython module for differential pressure sensor, D6F-PH (OMRON).
+# A MicroPython module for differential pressure sensor, D6F-PH (OMRON).
  I2C driver for D6F-PH pressure sensor (OMRON)
 
-This code was tested with Micropython 1.19.1 - 1.20.0 on STM32F4.
+This code was tested with MicroPython 1.19.1 - 1.20.0 on STM32F4.
 https://github.com/ekspla/D6F-PH
 
 ## How to use
